@@ -1,0 +1,68 @@
+<ons-navigator animation="lift" var="sendto.navi">
+  <ons-page>
+        <ons-toolbar>
+        <div class="left">
+        <span class="toolbar-button--quiet navigation-bar__line-height">
+            <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
+        </span>
+        </div>
+
+        <div class="center">履歴</div>
+        <div class="right">
+        <span class="toolbar-button--quiet navigation-bar__line-height" ng-click="sendto.navi.pushPage('sendto.html')">
+            <i class="ion-ios-upload-outline" style="font-size:32px; vertical-align:-6px;"></i>
+        </span>
+        </div>
+        </ons-toolbar>
+        
+
+  <!-- p style="text-align: center; color: #999; font-size: 14px;">Swipe left to draw action menu.</p -->
+
+  <ons-list>
+    <ons-list-item class="list-item" ng-repeat="a in [1,2,3,4,5,6,7,8,9,10]">
+      <ons-carousel swipeable style="height: 80px; width: 400px;" initial-index="0" auto-scroll auto-scroll-ratio="0.3">
+        <ons-carousel-item class="list-action-item" style="height: 80px; width: 400px;"> <!-- カルーセルアイテム0 画面 -->
+          <ons-row>
+            <ons-col width="52px" style="padding: 20px 0 0 0;">
+              <div style="width: 42px; height: 42px; background-color: #ccc; border-radius: 6px;"></div>
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                【424】02/16 23:13 NariPhone
+              </div>
+              <div class="desc">
+                ⚪⚪⚪⚪❤️⚪⚪⚪⚪⚪⚪<br>
+                少し疲れていますね。<br>
+                休息をとりましょう。
+              </div>
+            </ons-col>
+          </ons-row>
+        </ons-carousel-item>
+        <ons-carousel-item class="list-action-menu" style="width: 80px;"> <!-- カルーセルアイテム1 画面 -->
+            <div class="blockInline">
+                <ons-button ng-click="setSelected($index); myNavigator.pushPage('itemdetails.html');">
+                  詳細
+                <ons-icon icon="ion-clipboard"></ons-icon>
+                </ons-button>
+                <ons-button ng-click="setSelected($index); myNavigator.pushPage('sendto.html');">
+                  送付
+                <ons-icon icon="ion-ios-upload-outline"></ons-icon>
+                </ons-button>
+                <ons-button ng-click="deleteItem($index1); carousel['id'+$index].setActiveCarouselItemIndex(1);">
+                  削除
+                  <ons-icon icon="ion-trash-a"></ons-icon>
+                </ons-button>
+            </div>    
+        </ons-carousel-item>
+      </ons-carousel>
+    </ons-list-item>
+  </ons-list>
+
+
+        
+  </ons-page>
+</ons-navigator>
+
+
+
+

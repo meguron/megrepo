@@ -1,0 +1,357 @@
+
+  <ons-navigator animation="slide" var="CtrSetMenu">
+  <ons-page>
+    <ons-toolbar>
+      <div class="center">設定</div>
+    </ons-toolbar>
+
+    <ons-list>
+        <ons-list-header>個人設定</ons-list-header>
+        <div>名前　*必須*
+        <input style="width:210px;" type="text" class="text-input" placeholder="名前" value=""/><br>
+        </div>
+        <div class="button-bar" style="width:310px;">
+            性別　*必須*<div class="button-bar__item">
+            <input type="radio" name="sex" checked />
+            <button class="button-bar__button">男</button>
+            </div>
+            <div class="button-bar__item">
+            <input type="radio" name="sex">
+            <button class="button-bar__button">女</button>
+            </div>
+        
+        </div>
+        <div>年代　*必須*
+        <select name="age" style="width:105px; font-size:16px;">
+        	<option value="less10">10才未満</option>
+			<option value="10age">10代</option>
+			<option value="20age" selected>20代</option>
+			<option value="30age">30代</option>
+			<option value="40age">40代</option>
+			<option value="50age">50代</option>
+            <option value="60age">60代</option>
+            <option value="70age">70代</option>
+            <option value="80age">80代</option>
+            <option value="90age">90代</option>
+            <option value="over100">100才以上</option>
+		</select>
+        <br>
+        </div>   
+        <div>地域　*必須*
+        <select name="area" style="width:105px; font-size:16px;">
+            <option value="1">1:北海道</option>
+			<option value="2">2:東北</option>
+			<option value="3" selected>3:関東</option>
+			<option value="4">4:中部</option>
+			<option value="5">5:近畿</option>
+			<option value="6">6:中国</option>
+            <option value="7">7:四国</option>
+            <option value="8">8:九州</option>
+            <option value="9">9:沖縄</option>
+            <option value="10">10:国外</option>
+		</select>
+        </div>
+
+        <ons-list-header>共有</ons-list-header>
+        <ons-list-item modifier="chevron" ng-click="CtrSetMenu.pushPage('expage1.html');">
+          <ons-icon icon="ion-social-facebook" size="20px"></ons-icon>
+          Facebook
+          <span class="list-item-note lucent">OFF</span>
+        </ons-list-item>
+        <ons-list-item modifier="chevron" ng-click="CtrSetMenu.pushPage('expage3.html');">
+          <ons-icon icon="ion-social-twitter" size="20px"></ons-icon>
+          Twitter
+          <span class="list-item-note lucent">OFF</span>
+        </ons-list-item>
+        <ons-list-item modifier="chevron" ng-click="CtrSetMenu.pushPage('expage5.html');">
+          <ons-icon icon="ion-ios-heart" size="20px"></ons-icon>
+          Healthkit
+          <span class="list-item-note lucent">OFF</span>
+        </ons-list-item>
+
+        <ons-list-header>オプション</ons-list-header>
+        <ons-list-item modifier="chevron" ng-click="CtrSetMenu.pushPage('expage7.html');">
+          <ons-icon icon="ion-ios-calendar-outline" size="20px"></ons-icon>
+          リマインダー
+          <span class="list-item-note lucent">OFF</span>
+        </ons-list-item>
+
+        <ons-list modifier="chevron" class="settings-list">
+        <ons-list-item>
+        <ons-icon icon="ion-ios-location-outline" size="20px"></ons-icon>
+            位置情報を使う
+          <ons-switch modifier="list-item"></ons-switch>
+        </ons-list-item>
+
+        <ons-list-item>
+        <ons-icon icon="ion-heart" size="20px"></ons-icon>
+            Cardiioを使う
+          <ons-switch modifier="list-item"></ons-switch>
+          <!-- ons-switch modifier="list-item" checked></ons-switch -->
+        </ons-list-item>
+
+        <ons-list-header>アプリについて</ons-list-header>
+
+        <ons-list-item modifier="chevron" ng-click="CtrSetMenu.pushPage('help.html');">
+          <ons-icon icon="ion-help-circled" size="20px"></ons-icon>
+          ヘルプ
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" ng-click="CtrSetMenu.pushPage('faq.html');">
+          <ons-icon icon="ion-information-circled" size="20px"></ons-icon>
+          よくある質問
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" ng-click="CtrSetMenu.pushPage('terms.html');">
+          <ons-icon icon="ion-ios-copy-outline" size="20px"></ons-icon>
+          利用規約
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" ng-click="CtrSetMenu.pushPage('privacypol.html');">
+          <ons-icon icon="ion-ios-locked-outline" size="20px"></ons-icon>
+          プライバシーポリシー
+        </ons-list-item>
+
+    </ons-list>
+
+  </ons-page>
+<!-- /ons-navigator -->
+
+// 拡張設定
+// Facebook共有
+<ons-template id="expage1.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left"><ons-back-button>戻る</ons-back-button></div>
+      <div class="center">Facebook共有</div>
+    </ons-toolbar>
+    <!-- TODO: Please edit here -->
+    <p style="text-align: center">このバージョンでは使用できません。<br>
+        Welcome to Facebook!
+    </p>
+
+      <div class="login-form">
+        <input type="email" class="text-input--underbar" placeholder="Email" value="">
+        <input type="password" class="text-input--underbar" placeholder="Password" value="">
+        <br><br>
+        <ons-button modifier="large" class="login-button">Log In</ons-button>
+        <br>
+        <ons-button modifier="quiet" class="forgot-password">Forgot password?</ons-button>
+        <br>
+      </div>
+      
+    <p style="text-align: center">      
+      <ons-button modifier="light" ng-click="CtrSetMenu.popPage('expage1.html');">Back</ons-button>
+    </p>
+  </ons-page>
+</ons-template>
+<ons-template id="expage2.html"></ons-template> <!-- DAMMY -->
+
+// Twitter共有
+<ons-template id="expage3.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left"><ons-back-button>戻る</ons-back-button></div>
+      <div class="center">Twitter共有</div>
+    </ons-toolbar>
+    <!-- TODO: Please edit here -->
+    <p style="text-align: center">このバージョンでは使用できません。<br>
+        Welcome to Twitter!
+    </p>
+
+      <div class="login-form">
+        <input type="email" class="text-input--underbar" placeholder="Email" value="">
+        <input type="password" class="text-input--underbar" placeholder="Password" value="">
+        <br><br>
+        <ons-button modifier="large" class="login-button">Log In</ons-button>
+        <br>
+        <ons-button modifier="quiet" class="forgot-password">Forgot password?</ons-button>
+        <br>
+      </div>
+      
+    <p style="text-align: center"> 
+      <ons-button modifier="light" ng-click="CtrSetMenu.popPage('expage3.html');">Back</ons-button>
+    </p>
+  </ons-page>
+</ons-template>
+<ons-template id="expage4.html"></ons-template> <!-- DAMMY -->
+
+// Apple HealthKit共有
+<ons-template id="expage5.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left"><ons-back-button>戻る</ons-back-button></div>
+      <div class="center">Apple HealthKit共有</div>
+    </ons-toolbar>
+    <!-- TODO: Please edit here -->
+    <p style="text-align: center">このバージョンでは使用できません。
+      <ons-button modifier="light" ng-click="CtrSetMenu.popPage('expage5.html');">Back</ons-button>
+    </p>
+  </ons-page>
+</ons-template>
+<ons-template id="expage6.html"></ons-template> <!-- DAMMY -->
+
+// リマインダー設定
+<ons-template id="expage7.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left"><ons-back-button>戻る</ons-back-button></div>
+      <div class="center">リマインダー</div>
+    </ons-toolbar>
+    
+    <!-- TODO: Please edit here  -->
+    <p style="text-align: center">このバージョンでは使用できません。</p>
+        <ons-list modifier="chevron" class="settings-list">
+        <ons-list-item>
+        <ons-icon icon="ion-ios-calendar-outline" size="20px"></ons-icon>
+            リマインダー ON/OFF
+          <ons-switch modifier="list-item"></ons-switch>
+        </ons-list-item>
+
+      <ons-list>
+        <ons-list-header>日付</ons-list-header>
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item"><strong>繰り返し条件</strong><br>
+            <input type="radio" name="a" checked="checked">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            毎日
+          </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            毎日(土日を除く)
+          </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            <select name="nweek" style="font-size:16px;">
+    		    <option value="all-weeks">毎週</option>
+			    <option value="1st-week">毎月 第1</option>
+			    <option value="2nd-week">毎月 第2</option>
+			    <option value="3rd-week">毎月 第3</option>
+			    <option value="4th-week">毎月 第4</option>
+			    <option value="end-week">毎月 最終</option>
+		    </select>
+		    <select name="week" style="font-size:16px;">
+			    <option value="sun">日曜日</option>
+			    <option value="mon">月曜日</option>
+			    <option value="tue">火曜日</option>
+			    <option value="wed">水曜日</option>
+			    <option value="thu">木曜日</option>
+			    <option value="fri">金曜日</option>
+			    <option value="fri">土曜日</option>
+		    </select>
+          </label>
+        </ons-list-item>
+
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="a">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            毎月<select name="day" style="font-size:16px;">
+			    <option value="1">1日</option>
+			    <option value="2">2日</option>
+			    <option value="3">3日</option>
+			    <option value="4">4日</option>
+			    <option value="5">5日</option>
+			    <option value="6">6日</option>
+    		    <option value="7">7日</option>
+			    <option value="8">8日</option>
+			    <option value="9">9日</option>
+			    <option value="10">10日</option>
+			    <option value="11">11日</option>
+			    <option value="12">12日</option>
+    		    <option value="13">13日</option>
+			    <option value="14">14日</option>
+			    <option value="15">15日</option>
+			    <option value="16">16日</option>
+			    <option value="17">17日</option>
+			    <option value="18">18日</option>
+    		    <option value="19">19日</option>
+			    <option value="20">20日</option>
+			    <option value="21">21日</option>
+			    <option value="22">22日</option>
+			    <option value="23">23日</option>
+			    <option value="24">24日</option>
+        	    <option value="25">25日</option>
+			    <option value="26">26日</option>
+			    <option value="27">27日</option>
+			    <option value="28">28日</option>
+			    <option value="29">29日</option>
+			    <option value="30">30日</option>
+    		    <option value="31">31日</option>
+			    <option value="end">月末</option>
+		    </select>
+          </label>
+        </ons-list-item>
+      </ons-list>
+      
+      <ons-list>
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item"><strong>期限</strong><br>
+            <input type="radio" name="b" checked="checked">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            期限なし
+          </label>
+        </ons-list-item>
+        
+        <ons-list-item modifier="tappable">
+          <label class="radio-button radio-button--list-item">
+            <input type="radio" name="b">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            年/月/日<input type="date" name="limit-date" style="font-size:16px;"/>
+        　</label>
+        </ons-list-item>        
+      </ons-list>
+      
+      <ons-list>
+        <ons-list-header>時刻／時間間隔</ons-list-header>
+        <ons-list-item modifier="tappable">
+        <label class="radio-button radio-button--list-item">
+            <input type="radio" name="c" checked="checked">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            時刻<input type="time" name="call-time" style="font-size:16px;"/>
+        　</label>
+        </ons-list-item>
+        
+        <ons-list-item modifier="tappable">
+         <label class="radio-button radio-button--list-item">
+            <input type="radio" name="c">
+            <div class="radio-button__checkmark radio-button--list-item__checkmark"></div>
+            <select name="repeat-time" style="font-size:16px;">
+    		    <option value="1">1時間毎</option>
+                <option value="2">2時間毎</option>
+                <option value="3">3時間毎</option>
+                <option value="4">4時間毎</option>
+            </select>
+        　</label>
+        </ons-list-item>
+      </ons-list>
+      
+</ons-page>
+</ons-template>
+<ons-template id="expage8.html"></ons-template> <!-- DAMMY -->
+
+// サブ画面サンプル
+<ons-template id="expage9.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left"><ons-back-button>戻る</ons-back-button></div>
+      <div class="center">サンプル</div>
+    </ons-toolbar>
+    <!-- TODO: Please edit here -->
+    <p style="text-align: center">
+      <ons-button modifier="light" ng-click="CtrSetMenu.popPage('expage9.html');">Back</ons-button>
+    </p>
+  </ons-page>
+</ons-template>
+<ons-template id="expage10.html"></ons-template> <!-- DAMMY -->
+
+</ons-navigator>
+

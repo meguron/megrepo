@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        angular.module('myApp', ['onsen']);
+        ons.bootstrap();
+    </script>
+</head>
+<body>
+<!-- ツールバー ボタン設定 -->
+<!-- チャートを日・週・月・年ごとに表示 -->
+<ons-toolbar>
+  <div class="left">
+    <span class="toolbar-button--quiet navigation-bar__line-height">
+      <i class="ion-navicon"
+        style="font-size:32px; vertical-align:-6px;"></i>
+    </span>
+  </div>
+  
+  <div class="center">チャート</div>
+  <div class="right">
+    <span class="toolbar-button--quiet navigation-bar__line-height" page="">
+        <i class="ion-ios-upload-outline"
+        style="font-size:32px; vertical-align:-6px;"></i>
+    </span>
+  </div>
+</ons-toolbar>
+
+<div class="button-bar" style="width:100%">
+  <div class="button-bar__item">
+    <input type="radio" name="segment-a">
+    <button class="button-bar__button">日</button>
+  </div>
+  <div class="button-bar__item">
+    <input type="radio" name="segment-a" checked>
+    <button class="button-bar__button">週</button>
+  </div>
+  <div class="button-bar__item">
+    <input type="radio" name="segment-a">
+    <button class="button-bar__button">月</button>
+  </div>
+    <div class="button-bar__item">
+    <input type="radio" name="segment-a">
+    <button class="button-bar__button">年</button>
+  </div>
+</div>
+
+<!-- グラフ表示 -->
+    <div align="center" style="width: 100%">
+            <div>❤CEM値❤</div>
+            <canvas id="mycanvas1" height="94" width="370"></canvas> <!-- 折れ線グラフ1 -->
+            <div>❤脈拍数❤</div>
+            <canvas id="mycanvas2" height="94" width="370"></canvas> <!-- 折れ線グラフ2 -->
+            <div>❤血圧❤</div>
+            <canvas id="mycanvas3" height="94" width="370" style="background-color: #cccccc;"></canvas> <!-- 折れ線グラフ3 -->
+            <div>❤体温❤</div>
+            <canvas id="mycanvas4" height="94" width="370" style="background-color: #cccccc;"></canvas> <!-- 折れ線グラフ4 -->
+    </div>
+
+<!-- グラフ1生成 -->
+    <script>
+    var randomScalingFactor = function(){ return Math.round(Math.random()*1000)}; //100 -> 1000 
+    var data = {
+        labels: ["1日","2日","3日","4日","5日","6日","7日"],//X軸のラベル
+        datasets: [
+            {
+            label: "My First dataset",//項目名
+            fillColor: "rgba(151,187,205,0.5)",//塗りつぶす色
+            strokeColor: "rgba(151,187,205,0.5)",//線の色
+            pointColor: "rgba(220,220,220,1)",//値の点を塗りつぶす色
+            pointStrokeColor: "#fff",//値の点の枠線の色
+            pointHighlightFill: "#fff",//マウスオーバー時値の点を塗りつぶす色
+            pointHighlightStroke: "rgba(220,220,220,1)",//マウスオーバー時値の点の枠線を塗りつぶす色
+            data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]//値
+            }
+        ]
+    };
+    var ctx = document.getElementById("mycanvas1").getContext("2d");
+    var myChart = new Chart(ctx).Line(data);
+    </script>
+
+<!-- グラフ2生成 -->
+    <script>
+    var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
+    var data = {
+        labels: ["1日","2日","3日","4日","5日","6日","7日"],//X軸のラベル
+        datasets: [
+            {
+            label: "My First dataset",//項目名
+            fillColor: "rgba(151,187,205,0.5)",//塗りつぶす色
+            strokeColor: "rgba(151,187,205,0.5)",//線の色
+            pointColor: "rgba(220,220,220,1)",//値の点を塗りつぶす色
+            pointStrokeColor: "#fff",//値の点の枠線の色
+            pointHighlightFill: "#fff",//マウスオーバー時値の点を塗りつぶす色
+            pointHighlightStroke: "rgba(220,220,220,1)",//マウスオーバー時値の点の枠線を塗りつぶす色
+            data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]//値
+            }
+        ]
+    };
+    var myChart = new Chart(document.getElementById("mycanvas2").getContext("2d")).Line(data);
+    </script>
+<!-- グラフ3生成 -->
+    <script>
+    var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
+    var data = {
+        labels: ["1日","2日","3日","4日","5日","6日","7日"],//X軸のラベル
+        datasets: [
+            {
+            label: "My First dataset",//項目名
+            fillColor: "rgba(151,187,205,0.5)",//塗りつぶす色
+            strokeColor: "rgba(151,187,205,0.5)",//線の色
+            pointColor: "rgba(220,220,220,1)",//値の点を塗りつぶす色
+            pointStrokeColor: "#fff",//値の点の枠線の色
+            pointHighlightFill: "#fff",//マウスオーバー時値の点を塗りつぶす色
+            pointHighlightStroke: "rgba(220,220,220,1)",//マウスオーバー時値の点の枠線を塗りつぶす色
+            data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]//値
+            }
+        ]
+    };
+    var myChart = new Chart(document.getElementById("mycanvas3").getContext("2d")).Line(data);
+    </script>
+<!-- グラフ4生成 -->
+    <script>
+    var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
+    var data = {
+        labels: ["1日","2日","3日","4日","5日","6日","7日"],//X軸のラベル
+        datasets: [
+            {
+            label: "My First dataset",//項目名
+            fillColor: "rgba(151,187,205,0.5)",//塗りつぶす色
+            strokeColor: "rgba(151,187,205,0.5)",//線の色
+            pointColor: "rgba(220,220,220,1)",//値の点を塗りつぶす色
+            pointStrokeColor: "#fff",//値の点の枠線の色
+            pointHighlightFill: "#fff",//マウスオーバー時値の点を塗りつぶす色
+            pointHighlightStroke: "rgba(220,220,220,1)",//マウスオーバー時値の点の枠線を塗りつぶす色
+            data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]//値
+            }
+        ]
+    };
+    var myChart = new Chart(document.getElementById("mycanvas4").getContext("2d")).Line(data);
+    </script>
+
+</body>
+</html>

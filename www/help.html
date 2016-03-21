@@ -1,0 +1,102 @@
+//　ヘルプ
+
+<ons-toolbar>
+    <div class="left" style="line-height: 44px">
+        <ons-back-button>戻る</ons-back-button>
+    </div>
+    <div class="center">ヘルプ</div>
+    <!-- div class="right" style="line-height: 44px">
+        Right
+    </div -->
+</ons-toolbar>
+
+    <!-- TODO: Please edit here -->
+<span style="font-size: 12pt;"><strong><em>声で測る。</em></strong></span>
+<span style="font-size: 12pt;"><strong><em>カオスで測る。</em></strong></span><br>
+<span style="font-size: 14pt;"><strong><em>カオス論的音声解析"Dr.Nono"</em></strong></span><p>
+<span></span>
+
+<span style="font-size: 12pt;">Ver.0.1.2 : 16/Feb/2016</span><p>
+
+<span style="font-size: 12pt;">Dr.Nono（ドクターノーノ）は、ごく短い時間の発話音声を録音し、録音された音声データをサーバ（CENTE）に転送し、カオス論的解析を行い疲労度の目安（CEM値）を計算し、画面に表示するカオス論的音声解析支援アプリケーションです。</span>
+<ol>
+    <li><span style="font-size: 12pt;"><a href="#p1">はじめに　～カオス論的音声解析～</a></span></li>
+	<li><span style="font-size: 12pt;"><a href="#p2">Dr.Nonoの概要</a></span></li>
+	<li><span style="font-size: 12pt;"><a href="#p3">Dr.Nonoの特徴</a></span></li>
+	<li><span style="font-size: 12pt;"><a href="#p4">アプリの機能</a></span></li>
+	<li><span style="font-size: 12pt;"><a href="#p5">計測・解析方法</a></span></li>
+	<li><span style="font-size: 12pt;"><a href="#p6">サポートについて</a></span></li>
+	<li><span style="font-size: 12pt;"><a href="#p7">Dr.Nonoの使い方</a></span></li>
+</ol>
+<a name="p1"></a><span style="font-size: 12pt;"><em><strong>《はじめに　～カオス論的音声解析～》</strong></em></span>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">それは、飛行管制業務やパイロットの仕事からヒューマン･エラー（人が原因で起こるあやまり）を、どのようにしたら減らせるか。ヒューマン･エラーはどのような時に起こりやすいか。業務に集中できない、何かに気をとられている、他のことを考えている、いわば注意力が散漫になっているとき。疲労（疲れ）や眠気を感じるとき。「疲れ」を定量的に数字で表現できないものか。しかも、本来の仕事を邪魔しない方法で。そんな思いが音声解析研究の始まりでした。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">1970年代、コンピュータによる音声信号処理が可能になって以来、音声から発話者の疲労度等を定量化する方法として、基本周波数やフォルマント周波数の変化、またその変化パターンを評価するためにソノグラフから特徴量を抽出する技術などが一般的に使われ、心身状態等と対応付ける試みがなされていますが、1998年以来、国立研究開発法人 電子航法研究所では、音声信号の有するカオス論的な特徴量から発話者の覚醒度やストレスを評価する技術研究開発を進めてまいりました。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">そして1998年、幸運にも時系列信号としての発話音声からターケンスの埋め込み定理により再構成される音声のストレンジ・アトラクタの最大リアプノフ指数が、発話者の心身状態に対応して変化するように見える場合があることを発見しました。実験的に疲労の蓄積により音声の”ゆらぎ”が小さくなることが確認されたのです。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">その後、発話音声をカオス理論により分析することで、発話者の大脳皮質の活性化状態が定量的に評価できることが実験的に確認され、その指数をCEM（Cerebral Exponent Macro）として定義しました。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">カオス論的な信号処理においては、マイクロフォンに発生する音声信号電圧から、ストレンジ・アトラクタと呼ばれる図を生成（再構成）し、これを評価します。ストレンジ・アトラクタは人間の目には何か意味を有するように見える形状を有しており、何等かの軌道が揺らいでいるような印象を与えます。実験的には、この視覚的な印象としての”ゆらぎ”を定量的に評価した指数値（CEM値）が、その発話者の大脳皮質の活性度と相関することが確認されています。活性度が高い場合には”ゆらぎ”は大きく、CEM値は比較的に大きな値となり、逆に消耗して余裕を失ってしまっているような場合には”ゆらぎ”は小さく、CEM値は比較的に小さな数値になります。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">電子航法研究所では、カオス論的な音声解析により得られるCEM値の有効性を実証するため、CENTE（センテ）と名付けたカオス論的発話音声分析装置を試作開発して、様々な状況下でも比較的容易に発話音声の解析が行えCEM値を得られるようにし、一般的に使用されるリーディング・スパンテスト、TSST（Trier Social Stress Test）などのストレス評価テストとの比較、坑ヒスタミン剤の服用時と否服用時の覚醒度比較、CEM値の変化とサーカディアンリズム（体内時計）の影響確認など様々な実証実験を重ね、CEM値の心身状態等の変化計測指標としての有効性もしくは可能性、期待性を確認してまいりました。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">そして、この度スマートフォン等のモバイル端末を利用したカオス論的音声解析支援アプリケーションとして「Dr.Nono」を開発し、覚醒度、疲労度のみならず、様々な心身状態の変化計測にカオス論的音声解析（CEM値）をご利用できるようにしました。ぜひご利用ください。</span></p>
+<a name="p2"></a><span style="font-size: 12pt;"><em><strong>《Dr.Nonoの概要》</strong></em></span>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">Dr.Nono（ドクターノーノ）は、ごく短い時間の発話音声を録音し、録音された音声データをサーバ（CENTE）に転送し、カオス論的解析を行い疲労度の目安（CEM値）を計算し、画面に表示するカオス論的音声解析支援アプリケーションです。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">疲労状態の確認、健康状態の確認、心身状態の確認、ストレス・チェック、疾病の進行、恢復状態の確認など様々な利用可能性が考えられる新しい音声解析技術を利用することができるアプリケーションです。</span></p>
+<a name="p3"></a><span style="font-size: 12pt;"><em><strong>《Dr.Nonoの特徴》</strong></em></span>
+<ul>
+	<li><span style="font-size: 12pt;">簡単</span></li>
+</ul>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">使い方はとても簡単。録音ボタンを押して画面に表示される文章を声に出して読み上げ、分析ボタンを押すだけ。</span></p>
+
+<ul>
+	<li><span style="font-size: 12pt;">実績のカオス理論解析</span></li>
+</ul>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">18年以上の研究実績。周波数分析やフォルマント分析とは異なる新たな解析技術を使用。</span></p>
+
+<ul>
+	<li><span style="font-size: 12pt;">定量的</span></li>
+</ul>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">解析結果はCEM（Cerebral Exponent Macro）値で定量化。解析結果の履歴保存。</span></p>
+
+<ul>
+	<li><span style="font-size: 12pt;">C/Sシステム</span></li>
+</ul>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">高負荷処理の音声解析（カオス理論解析）を高性能サーバで実施。</span></p>
+<a name="p4"></a><span style="font-size: 12pt;"><em><strong>《アプリの機能》</strong></em></span>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">・設定機能：利用者の簡単なプロファイルとコンディションを設定できます。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">・朗読カード表示：読み上げる文章をカード表示します。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">・録音・再生・分析：音声の録音・再生・分析を実施します。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">・履歴機能：解析結果（CEM値）の履歴を表示します。</span></p>
+<a name="p5"></a><span style="font-size: 12pt;"><em><strong>《計測・解析方法》</strong></em></span>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">・スマートフォン等のマイクロフォンで録音された音声データを４G回線もしくはWiFiネットワークを通じてサーバに転送し、サーバでカオス論的解析を行い、解析結果（CEM値）をスマートフォン等に戻し、表示します。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">・CEM値に基づき、疲労度を11段階に分類してメッセージを表示します。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">100以下、900以上は異常値と判断しています。400～700が平常値で、490～510は中央値500とほぼ同じであると判断し、最も良い状態としています。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">CEM　&lt;　100.0　(異常値)</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">100.0　≦　CEM　&lt;　300.0　「非常に疲れています.今すぐに十分な 休息をとりましょう.」</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">300.0　≦　CEM　&lt;　350.0　「とても疲れています.すぐに十分な 休息をとりましょう.」</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">350.0　≦　CEM　&lt;　400.0　「疲れています.そろそろ休息をとりましょう.」</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">400.0　≦　CEM　&lt;　450.0　「少し疲れています.休息をとりましょう.」</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">450.0　≦　CEM　&lt;　490.0　「良好な状態です.疲れを感じたら 休息をとりましょう.」</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">490.0　≦　CEM　&lt;　510.0　「大変良好な状態です.リラックスしていますね.」</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">510.0　≦　CEM　&lt;　550.0　「良好な状態です.リラックスを心がけましょう.」</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">550.0　≦　CEM　&lt;　600.00　「少し緊張しています.少しリラックスしましょう.」</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">600.00　≦　CEM　&lt;　650.0　「緊張しています.リラックスできることをしましょう.」</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">650.0　≦　CEM　&lt;　700.0　「とても緊張しています.すぐにリラックスできることをしましょう.」</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">700.0　≦　CEM　&lt;　900.0　「非常に緊張しています.今すぐにリラックスできることをしましょう.」</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">900.0　≦　CEM　                   　（異常値）</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">・解析結果は、履歴としてスマートフォン等に保存されます。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">・解析はすべてサーバで音声解析（カオス理論解析）のみを行っており、発話内容の解析、意味解析等は行いません。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">・解析には、約10秒分の音声データが使用され、約10秒程度の解析時間が必要ですが、回線状態により異なります。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">・サーバには音声データの他、設定機能で設定したプロファイルも保存されます。サーバソフトウェアの機能改善の目的で使用する場合があります。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">・スマートフォン等とサーバ間のデータ転送の際の通信で発生する通信料は本アプリ利用者負担となります。</span></p>
+<a name="p6"></a><span style="font-size: 12pt;"><em><strong>《サポートについて》</strong></em></span>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">アプリに関するご要望や質問等は、メールにてお送りください。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">info@siceca.watson.jp　（サポート問い合わせ窓口）</span></p>
+<span style="font-size: 12pt;"><em><strong>■注意事項</strong></em></span>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">※本アプリが提供する診断結果は、[日本国特許4500955（大脳評価装置）]のアルゴリズムによって算出される数値を基に提供しますが、結果は個人差や音声の録音状況によっても影響されることから、正確性や客観性を担保するものではありません。利用者自身の心身の状態を判断する情報の一つとして活用頂くものとします。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">※本アプリのご利用頂くには、LTE/4G回線または無線LANなどの通信環境が必要なります。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">※本アプリは、無料でご利用頂けますが、本アプリを利用する上で必要なモバイル端末、通信サービス等に関して費用が発生する場合は、利用者の負担となります。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">※音声データに雑音が含まれると正しい分析ができない可能性もあります。音声録音の際は、なるべく静かな場所でご使用して下さい。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">※マイクロフォンなど録音デバイスの固体差による分析結果の違いがなるべく起こらないように、複数台のiPhoneやiPad、iPad mini 、iPod touchで複数人の音声を録音し、分析パラメータを調整しておりますが、利用端末の違いにより解析結果が異なる場合があります。</span></p>
+<p style="padding-left: 20px;"><span style="font-size: 12pt;">※その他、アプリ本体の利用規約をご覧ください。</span></p>
+
+
+
+

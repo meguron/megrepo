@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        angular.module('myApp', ['onsen']);
+        ons.bootstrap();
+    </script>
+</head>
+<body>
+
+<ons-sliding-menu 
+    main-page="analysis_page1.html"
+    menu-page="analysis_menu.html"
+    side="left"
+    max-slide-distance="250px" var="menu">
+</ons-sliding-menu>
+
+// 固定(指定音読)形式 画面
+<div>
+<ons-template id="analysis_page1.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button ng-click="menu.toggleMenu()">
+          <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">固定(指定音読)形式</div>
+    </ons-toolbar>
+    
+    <div align="center">
+    <p style="text-align: center; color: #999; padding-top: 0px;">心とからだのバランス診断</p>
+
+    <div style="width: 80%; text-align:left; width:80%; font-size:17px;">
+    <ons-carousel style="background-color: #7FFFE4; height: 270px; width: 100%"
+        initial-index="0" swipeable overscrollable auto-scroll auto-scroll-ratio="0.3">
+            <ons-carousel-item> <!-- Index-0 -->
+                <br>
+                音読カードを読んで心とからだのバランスを診断しましょう。<br><br>
+                ここをスワイプ<<－>>すると音読カードを変更することができます。<br>
+            </ons-carousel-item>
+            <ons-carousel-item> <!-- Index-1-->
+                <br>
+                カルーセルアイテム２<br>
+            </ons-carousel-item>
+            <ons-carousel-item> <!-- Index-2 -->
+                <br/>
+                音読カードを読んで心とからだのバランスを診断しましょう。<br><br>
+                ここをスワイプ<<－>>すると音読カードを変更することができます。<br>
+            </ons-carousel-item>
+            <ons-carousel-item> <!-- Index-3 -->
+                <br/>
+                カルーセルアイテム４<br>
+            </ons-carousel-item>
+            <ons-carousel-item> <!-- Index-4 -->
+                <br>
+                カルーセルアイテム５<br>
+            </ons-carousel-item>
+            <ons-carousel-item> <!-- Index-5 -->
+                <br>
+                カルーセルアイテム６<br>
+            </ons-carousel-item>
+            <ons-carousel-item> <!-- Index-6 -->
+                <br>
+                カルーセルアイテム７<br>
+            </ons-carousel-item>
+        </ons-carousel>
+    </div>
+    
+    </div>
+
+    <label for="feeling">・気分は？</label>
+    <div align="center">
+        <select id="feeling" name="feeling" style="text-align:center; width:80%; font-size:16px;">
+        <option value="lively">活気がわいてくる</option>
+        <option value="vitality" selected>元気がいっぱいだ</option>
+        <option value="vividly">生き生きする</option>
+        <option value="angry">怒りを感じる</option>
+        <option value="exasperating">内心腹立たしい</option>
+        <option value="annoyed">イライラする</option>
+        <option value="tired">ひどく疲れた</option>
+        <option value="exhausted">へとへとだ</option>
+        <option value="languid">だるい</option>
+        <option value="mindtaut">気がはりつめている</option>
+        <option value="nxious">不安だ</option>
+        <option value="uncomfortable">落ち着かない</option>
+        <option value="melancholy">ゆううつだ</option>
+        <option value="bothersome">何をするのも面倒だ</option>
+        <option value="unconcentrate">物事に集中できない</option>
+        <option value="notclearmind">気分が晴れない</option>
+        <option value="notstickwork">仕事が手につかない</option>
+        <option value="sad">悲しいと感じる</option>
+        <option value="notone">どれにも当てはまらない</option>
+        </select>
+    </div>>
+    <label for="condition">・体調は？</label>
+    <div align="center">
+        <select id="condition" name="condition" style="text-align:center; width:80%; font-size:16px;">
+        <option value="dizzy">めまいがする</option>
+        <option value="jointpain">体のふしぶしが痛む</option>
+        <option value="headache">頭が重かったり頭痛がする</option>
+        <option value="stiffness">首筋や肩がこる</option>
+        <option value="backpain">腰が痛い</option>
+        <option value="eyestrain">目が疲れる</option>
+        <option value="pounding">動悸や息切れがする</option>
+        <option value="badstomach">胃腸の具合が悪い</option>
+        <option value="noappetite">食欲がない</option>
+        <option value="constipation-diarrhea">便秘や下痢をする</option>
+        <option value="sleeplessness">よく眠れない</option>
+        <option value="notone" selected>どれにも当てはまらない</option>
+        </select>
+    </div>
+    <br />
+    <div align="center" style="center">
+    <button class="button" style="width:32%">録音</button>
+    <button class="button button--cta" style="width:32%">再生</button>
+    <button class="button button--outline" style="width:32%">分析</button>
+    </div>
+
+  </ons-page>
+</ons-template>
+</div>
+
+// 自由(任意発話)形式 画面
+<div>
+<ons-template id="analysis_page2.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="menu.toggleMenu()">
+          <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">自由(任意発話)形式</div>
+    </ons-toolbar>
+
+    <div align="center">
+
+    <!-- アトラクタ描画箇所 -->
+    
+    <div style="width: 100%">
+    	<canvas id="Atractor" height="220" width="220" style="background-color: #cccccc;"></canvas>
+    </div>
+    <!-- アトラクタ生成 -->
+    <script>
+        var pieData = [
+                {
+                    value: 300,
+                    color:"#F7464A",
+                    highlight: "#FF5A5E",
+                    label: "Red"
+                },
+                {
+                    value: 50,
+                    color: "#46BFBD",
+                    highlight: "#5AD3D1",
+                    label: "Green"
+                },
+                {
+                    value: 100,
+                    color: "#FDB45C",
+                    highlight: "#FFC870",
+                    label: "Yellow"
+                },
+                {
+                    value: 40,
+                    color: "#949FB1",
+                    highlight: "#A8B3C5",
+                    label: "Grey"
+                },
+                {
+                    value: 120,
+                    color: "#4D5360",
+                    highlight: "#616774",
+                    label: "Dark Grey"
+                }
+            ];
+            window.onload = function(){
+                var ctx = document.getElementById("Atractor").getContext("2d");
+                window.myPie = new Chart(ctx).Pie(pieData);
+            };
+    </script>
+
+    <!-- スペクトラム描画箇所 -->
+    <div style="width: 100%">
+        <canvas id="Spectrum" height="100" width="300" style="background-color: #00cccc;"></canvas>
+    </div>
+    <!-- スペクトラム生成 -->
+    <script>       
+        var randomScalingFactor = function(){ return Math.round(Math.random()*1000)};
+        var data = {
+        labels: ["1日","2日","3日","4日","5日","6日","7日"],//X軸のラベル
+        datasets: [
+            {
+            label: "My First dataset",//項目名
+            fillColor: "rgba(151,187,205,0.5)",//塗りつぶす色
+            strokeColor: "rgba(151,187,205,0.5)",//線の色
+            pointColor: "rgba(220,220,220,1)",//値の点を塗りつぶす色
+            pointStrokeColor: "#fff",//値の点の枠線の色
+            pointHighlightFill: "#fff",//マウスオーバー時値の点を塗りつぶす色
+            pointHighlightStroke: "rgba(220,220,220,1)",//マウスオーバー時値の点の枠線を塗りつぶす色
+            data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]//値
+            }
+        ]
+    };
+        var ctx = document.getElementById("Spectrum").getContext("2d");
+        var myChart = new Chart(ctx).Line(data);
+    </script>
+
+    </div>
+    
+    <label for="feeling">・気分は？</label>
+    <div align="center">
+        <select id="feeling" name="feeling" style="text-align:center; width:80%; font-size:16px;">
+        <option value="lively">活気がわいてくる</option>
+        <option value="vitality" selected>元気がいっぱいだ</option>
+        <option value="vividly">生き生きする</option>
+        <option value="angry">怒りを感じる</option>
+        <option value="exasperating">内心腹立たしい</option>
+        <option value="annoyed">イライラする</option>
+        <option value="tired">ひどく疲れた</option>
+        <option value="exhausted">へとへとだ</option>
+        <option value="languid">だるい</option>
+        <option value="mindtaut">気がはりつめている</option>
+        <option value="nxious">不安だ</option>
+        <option value="uncomfortable">落ち着かない</option>
+        <option value="melancholy">ゆううつだ</option>
+        <option value="bothersome">何をするのも面倒だ</option>
+        <option value="unconcentrate">物事に集中できない</option>
+        <option value="notclearmind">気分が晴れない</option>
+        <option value="notstickwork">仕事が手につかない</option>
+        <option value="sad">悲しいと感じる</option>
+        <option value="notone">どれにも当てはまらない</option>
+        </select>
+    </div>
+    <label for="condition">・体調は？</label>
+    <div align="center">
+        <select id="condition" name="condition" style="text-align:center; width:80%; font-size:16px;" >
+        <option value="dizzy">めまいがする</option>
+        <option value="jointpain">体のふしぶしが痛む</option>
+        <option value="headache">頭が重かったり頭痛がする</option>
+        <option value="stiffness">首筋や肩がこる</option>
+        <option value="backpain">腰が痛い</option>
+        <option value="eyestrain">目が疲れる</option>
+        <option value="pounding">動悸や息切れがする</option>
+        <option value="badstomach">胃腸の具合が悪い</option>
+        <option value="noappetite">食欲がない</option>
+        <option value="constipation-diarrhea">便秘や下痢をする</option>
+        <option value="sleeplessness">よく眠れない</option>
+        <option value="notone" selected>どれにも当てはまらない</option>
+        </select>
+    </div>
+    <br />
+    <div align="center" style="center">
+    <button class="button" style="width:32%">録音</button>
+    <button class="button button--cta" style="width:32%">再生</button>
+    <button class="button button--outline" style="width:32%">分析</button><br>
+    <!-- button class="button button--large" style="width:99%">>停止<</button -->
+    </div>   
+        
+  </ons-page>
+</ons-template>
+</div>
+
+// サイドメニュー 画面
+
+<div>
+<ons-template id="analysis_menu.html">
+  <ons-list>
+    <ons-list-item modifier="chevron" onclick="menu.setMainPage('analysis_page1.html', {closeMenu: true})">
+      固定(指定音読)形式
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="menu.setMainPage('analysis_page2.html', {closeMenu: true})">
+      自由(任意発話)形式
+    </ons-list-item>
+  </ons-list>
+</ons-template>
+</div>
+
+</body>
+</html>
